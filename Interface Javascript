@@ -1,0 +1,163 @@
+// Auth Dropdown Functionality 
+const setupAuthDropdowns = () => {
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginDropdown = document.getElementById('loginDropdown');
+    const signupDropdown = document.getElementById('signupDropdown');
+    const closeLogin = document.getElementById('closeLogin');
+    const closeSignup = document.getElementById('closeSignup');
+    const switchToSignup = document.getElementById('switchToSignup');
+    const switchToLogin = document.getElementById('switchToLogin');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    if (!loginBtn || !signupBtn || !loginDropdown || !signupDropdown) return;
+
+    const toggleDropdown = (dropdown, button, otherDropdown = null) => {
+        if (!dropdown || !button) return;
+        
+        const isExpanded = dropdown.getAttribute('aria-hidden') === 'false';
+        dropdown.setAttribute('aria-hidden', isExpanded);
+        button.setAttribute('aria-expanded', !isExpanded);
+        
+        if (isExpanded) {
+            dropdown.classList.remove('show');
+        } else {
+            dropdown.classList.add('show');
+            if (otherDropdown) {
+                otherDropdown.classList.remove('show');
+                otherDropdown.setAttribute('aria-hidden', 'true');
+                const otherButton = otherDropdown === loginDropdown ? loginBtn : signupBtn;
+                if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+    };
+
+    // Event listeners
+    loginBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(loginDropdown, loginBtn, signupDropdown);
+    });
+
+    signupBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(signupDropdown, signupBtn, loginDropdown);
+    });
+
+    if (closeLogin) closeLogin.addEventListener('click', () => toggleDropdown(loginDropdown, loginBtn));
+    if (closeSignup) closeSignup.addEventListener('click', () => toggleDropdown(signupDropdown, signupBtn));
+
+    if (switchToSignup) {
+        switchToSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleDropdown(loginDropdown, loginBtn);
+            toggleDropdown(signupDropdown, signupBtn);
+        });
+    }
+
+    if (switchToLogin) {
+        switchToLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleDropdown(signupDropdown, signupBtn);
+            toggleDropdown(loginDropdown, loginBtn);
+        });
+    }
+
+    window.addEventListener('click', () => {
+        if (loginDropdown.classList.contains('show')) toggleDropdown(loginDropdown, loginBtn);
+        if (signupDropdown.classList.contains('show')) toggleDropdown(signupDropdown, signupBtn);
+    });
+
+    loginDropdown?.addEventListener('click', (e) => e.stopPropagation());
+    signupDropdown?.addEventListener('click', (e) => e.stopPropagation());
+
+    loginForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Login functionality would be implemented here');
+    });
+
+    signupForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Signup functionality would be implemented here');
+    });
+};
+
+// Calendar date selection
+document.querySelectorAll('.calendar-day').forEach(day => {
+    day.addEventListener('click', function() {
+        // Remove selected class from all days
+        document.querySelectorAll('.calendar-day').forEach(d => {
+            d.classList.remove('selected');
+        });
+        // Add selected class to clicked day
+        this.classList.add('selected');
+        
+        console.log('Selected date:', this.textContent);
+    });
+});
+
+// City selection
+document.querySelectorAll('.city-item').forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove selected class from all items
+        document.querySelectorAll('.city-item').forEach(i => {
+            i.classList.remove('selected');
+        });
+        // Add selected class to clicked item
+        this.classList.add('selected');
+        
+        console.log('Selected location:', this.textContent);
+    });
+});
+
+// Modal functionality
+const modals = {
+    community: document.getElementById('communityModal'),
+    housing: document.getElementById('housingModal'),
+    jobs: document.getElementById('jobsModal'),
+    services: document.getElementById('servicesModal'),
+    forsale: document.getElementById('forsaleModal'),
+    discussion: document.getElementById('discussionModal')
+};
+
+const buttons = {
+    community: document.getElementById('communityBtn'),
+    housing: document.getElementById('housingBtn'),
+    jobs: document.getElementById('jobsBtn'),
+    services: document.getElementById('servicesBtn'),
+    forsale: document.getElementById('forsaleBtn'),
+    discussion: document.getElementById('discussionBtn')
+};
+
+// Add click events to buttons
+Object.keys(buttons).forEach(key => {
+    if (buttons[key]) {
+        buttons[key].addEventListener('click', () => {
+            if (modals[key]) {
+                modals[key].style.display = "block";
+            }
+        });
+    }
+});
+
+// Add click events to close buttons
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+        const modal = this.closest('.modal');
+        if (modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+    }
+});
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setupAuthDropdowns();
+});
