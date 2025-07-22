@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      <h1>CraigList ph</h1>   
+      <br>
+      <br>
+      <h2><a href="#">Post an Ad</a></h2>
+    </header>
+    <div class="search-box">
+      <input type="text" placeholder="search craigslist">
+    </div>
+
+    
+    <h2 style="text-align: left;">Event Calendar</h2>
+    <div class="calendar-container">
+      
+    <div class="calendar">
+      <table>
+        <tr>
+          <th>S</th>
+          <th>M</th>
+          <th>T</th>
+          <th>W</th>
+          <th>T</th>
+          <th>F</th>
+          <th>S</th>
+        </tr>
+        <tr>
+          <td><span class="calendar-day"><a href="#">13</a></span></td>
+          <td><span class="calendar-day"><a href="#">14</a></span></td>
+          <td><span class="calendar-day"><a href="#">15</a></span></td>
+          <td><span class="calendar-day"><a href="#">16</a></span></td>
+          <td><span class="calendar-day"><a href="#">17</a></span></td>
+          <td><span class="calendar-day"><a href="#">18</a></span></td>
+          <td><span class="calendar-day"><a href="#">19</a></span></td>
+        </tr>
+        <tr>
+          <td><span class="calendar-day"><a href="#">20</a></span></td>
+          <td><span class="calendar-day"><a href="#">21</a></span></td>
+          <td><span class="calendar-day"><a href="#">22</a></span></td>
+          <td><span class="calendar-day"><a href="#">23</a></span></td>
+          <td><span class="calendar-day"><a href="#">24</a></span></td>
+          <td><span class="calendar-day"><a href="#">25</a></span></td>
+          <td><span class="calendar-day"><a href="#">26</a></span></td>
+        </tr>
+        <tr>
+          <td><span class="calendar-day"><a href="#">27</a></span></td>
+          <td><span class="calendar-day"><a href="#">28</a></span></td>
+          <td><span class="calendar-day"><a href="#">29</a></span></td>
+          <td><span class="calendar-day"><a href="#">30</a></span></td>
+          <td><span class="calendar-day"><a href="#">31</a></span></td>
+          <td><span class="calendar-day"><a href="#">1</a></span></td>
+          <td><span class="calendar-day"><a href="#">2</a></span></td>
+        </tr>
+        <tr>
+          <td><span class="calendar-day"><a href="#">3</a></span></td>
+          <td><span class="calendar-day"><a href="#">4</a></span></td>
+          <td><span class="calendar-day"><a href="#">5</a></span></td>
+          <td><span class="calendar-day"><a href="#">6</a></span></td>
+          <td><span class="calendar-day"><a href="#">7</a></span></td>
+          <td><span class="calendar-day"><a href="#">8</a></span></td>
+          <td><span class="calendar-day"><a href="#">9</a></span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="category-buttons">
+      <button class="category-btn" id="communityBtn">Community</button>
+      <button class="category-btn" id="housingBtn">Housing</button>
+      <button class="category-btn" id="jobsBtn">Jobs</button>
+      <button class="category-btn" id="servicesBtn">Services</button>
+      <button class="category-btn" id="forsaleBtn">For Sale</button>
+      <button class="category-btn" id="discussionBtn">Discussion forums</button>
+    </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">help</a> • 
+      <a href="#">faq</a> • 
+      <a href="#">abuse</a> • 
+      <a href="#">legal</a> • 
+      <a href="#">avoid scams & fraud</a> • 
+      <a href="#">personal safety tips</a><br>
+      <a href="#">about craigslist</a> • 
+      <a href="#">best-of-craigslist</a> • 
+      <a href="#">what's new</a> • 
+      <a href="#">system status</a><br>
+      <a href="#">craigslist charitable</a>
+    </div>
+
+    <div id="communityModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Community</h2>
+        </div>
+        <div class="subcategory-list">
+          <a href="#">Activities</a>
+          <a href="#">Artists</a>
+          <a href="#">Childcare</a>
+          <a href="#">Classes</a>
+          <a href="#">Events</a>
+          <a href="#">General</a>
+          <a href="#">Groups</a>
+          <a href="#">Local News</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="housingModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Housing</h2>
+        </div>
+        <div class="subcategory-list">
+          <a href="#">Apts / Housing</a>
+          <a href="#">Housing Swap</a>
+          <a href="#">Housing Wanted</a>
+          <a href="#">Office / Commercial</a>
+          <a href="#">Parking / Storage</a>
+          <a href="#">Real Estate for Sale</a>
+          <a href="#">Rooms / Shared</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="jobsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Jobs</h2>
+        </div>
+        <div class="subcategory-list">
+          <a href="#">Accounting/Finance</a>
+          <a href="#">Admin / Office</a>
+          <a href="#">Arch / Engineering</a>
+          <a href="#">Art / Media / Design</a>
+          <a href="#">Biotech / Science</a>
+          <a href="#">Business / Mgmt</a>
+          <a href="#">Customer Service</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="servicesModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Services</h2>
+        </div>
+        <div class="subcategory-list">
+          <a href="#">Automotive</a>
+          <a href="#">Beauty</a>
+          <a href="#">Cell/Mobile</a>
+          <a href="#">Computer</a>
+          <a href="#">Creative</a>
+          <a href="#">Event</a>
+          <a href="#">Financial</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="forsaleModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>For Sale</h2>
+        </div>
+        <div class="subcategory-list">
+          <a href="#">antiques</a>
+          <a href="#">appliances</a>
+          <a href="#">arts+crafts</a>
+          <a href="#">atv/utv/sno</a>
+          <a href="#">auto parts</a>
+          <a href="#">aviation</a>
+          <a href="#">baby+kid</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="discussionModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Discussion Forums</h2>
+        </div>
+        <div class="subcategory-list">
+          <a href="#">apple</a>
+          <a href="#">arts</a>
+          <a href="#">atheist</a>
+          <a href="#">autos</a>
+          <a href="#">beauty</a>
+          <a href="#">bikes</a>
+          <a href="#">celebs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="right-locations">  
+    <div class="auth-buttons">
+        <button class="auth-button" id="loginBtn" aria-expanded="false" aria-controls="loginDropdown">LOGIN</button>
+         <button class="auth-button" id="signupBtn" aria-expanded="false" aria-controls="signupDropdown">SIGN UP</button>
+              
+          <div class="auth-dropdown" id="loginDropdown" role="dialog" aria-modal="true" aria-hidden="true">
+          <button class="close-btn" id="closeLogin" aria-label="Close login form">×</button>
+            <form class="auth-form" id="loginForm">
+            <h3 class="form-title">Member Login</h3>
+          <div class="input-group">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+                      
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+                      
+         <button type="submit" class="submit-button">LOGIN</button>
+                      
+          <div class="form-footer">
+            <a href="/forgot-password">Forgot password?</a> | 
+            <a href="#" id="switchToSignup">Create account</a>
+          </div>
+            </form>
+          </div>
+              
+          <div class="auth-dropdown" id="signupDropdown" role="dialog" aria-modal="true" aria-hidden="true">
+            <button class="close-btn" id="closeSignup" aria-label="Close signup form">×</button>
+            <form class="auth-form" id="signupForm">
+            <h3 class="form-title">Create Account</h3>
+          <div class="input-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+                      
+            <div class="input-group">
+             <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+                      
+            <div class="input-group">
+              <label for="new-password">Password</label>
+              <input type="password" id="new-password" name="new-password" required>
+            </div>
+                      
+            <div class="input-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+                      
+            <button type="submit" class="submit-button">SIGN UP</button>
+                      
+            <div class="form-footer">
+              Already have an account? <a href="#" id="switchToLogin">Login here</a>
+                      </div>
+                  </form>
+              </div>
+        </div>
+
+    <div class="city-selection"> 
+      <h2>Select Your Location</h2>
+      <div class="city-group">
+        <h4>Main Cities</h4>
+        <div class="city-list">
+          <div class="city-item">Manila</div>
+          <div class="city-item">Cebu</div>
+          <div class="city-item">Davao City</div>
+          <div class="city-item">Iloilo</div>
+          <div class="city-item">Pampanga</div>
+          <div class="city-item">Zamboanga</div>
+        </div>
+      </div>
+      
+      <div class="city-group">
+        <h4>Other Locations</h4>
+        <div class="city-list">
+          <div class="city-item">Bacolod</div>
+          <div class="city-item">Bicol Region</div>
+          <div class="city-item">Cagayan de Oro</div>
+          <div class="city-item selected">Philippines (All)</div>
+        </div>
+      </div>
+      
+      <div class="city-group">
+        <h4>International</h4>
+        <div class="city-list">
+          <div class="city-item">Asia/Pacific</div>
+          <div class="city-item">CL Worldwide</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Script.js">
+  </script>
+</body>
+</html>
